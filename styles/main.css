@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     padding: 20px;
@@ -40,11 +40,17 @@ body {
 
 /* Calculator Card */
 .calculator-card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.10);
     overflow: hidden;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+    padding: 48px 40px 40px 40px;
+    border: 1.5px solid #f5f5f7;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    max-width: 700px;
 }
 
 /* Title Bar */
@@ -128,8 +134,12 @@ body {
 
 /* Input Section */
 .input-section {
-    padding: 32px 24px;
-    background: #ffffff;
+    background: #f8fafd;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(100,100,150,0.03);
+    padding: 32px 32px 28px 32px;
+    margin-bottom: 0;
+    border: 1px solid #f0f0f5;
 }
 
 .input-label {
@@ -178,51 +188,67 @@ body {
 
 /* Results Section */
 .results-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 40px 24px;
-    color: white;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(100,100,150,0.03);
+    color: #111;
     text-align: center;
-}
-
-.savings-display {
-    margin-bottom: 32px;
+    padding: 48px 32px 40px 32px;
+    border: 1px solid #f0f0f5;
+    margin-top: 0;
 }
 
 .savings-title {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: white;
+    color: #6c6c6c;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 18px;
 }
 
-.savings-subtitle {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 24px;
-}
-
-.savings-amount {
+.savings-amount-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    font-size: 48px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 16px;
+    font-size: 64px;
+    font-weight: 900;
+    color: #111;
+    gap: 16px;
+    margin-bottom: 32px;
 }
 
-.plus-sign {
-    color: #00d4aa;
+.checkmark-emoji {
+    font-size: 72px;
+    margin-left: 18px;
+    line-height: 1;
 }
 
-.currency {
-    color: white;
+.fee-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    gap: 60px;
 }
 
-.amount {
-    color: white;
+.fee-col {
+    flex: 1;
+    text-align: center;
 }
+
+.fee-label {
+    color: #8b8b8b;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.fee-amount {
+    color: #111;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.savings-subtitle, .breakdown-section, .toggle-breakdown { display: none !important; }
 
 /* Breakdown Section */
 .breakdown-section {
@@ -342,3 +368,118 @@ body {
     opacity: 0.7;
     transform: scale(0.98);
 }
+
+@media (max-width: 900px) {
+  .calculator-card {
+    padding: 32px 10px 24px 10px;
+    max-width: 98vw;
+  }
+  .input-section, .results-section {
+    padding: 24px 10px 18px 10px;
+  }
+}
+
+.calculator-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    margin-bottom: 40px;
+}
+.input-card, .results-card {
+    background: #F5F5F7;
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(100,100,150,0.03);
+    border: 1px solid #ececec;
+    padding: 48px 40px 40px 40px;
+    min-width: 400px;
+    max-width: 480px;
+    flex: 1 1 0;
+}
+.input-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.input-label {
+    font-size: 28px;
+    font-weight: 700;
+    color: #6c6c6c;
+    margin-bottom: 18px;
+}
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.volume-input {
+    width: 100%;
+    padding: 24px 60px 24px 24px;
+    font-size: 38px;
+    font-weight: 800;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    background: #fff;
+    color: #111;
+    text-align: right;
+}
+.currency-symbol {
+    position: absolute;
+    right: 24px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #6c6c6c;
+    pointer-events: none;
+}
+.fee-rate-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 24px;
+}
+.fee-rate-box {
+    background: #ededf0;
+    border-radius: 12px;
+    flex: 1 1 0;
+    padding: 24px 0;
+    text-align: center;
+}
+.fee-rate-label {
+    color: #8b8b8b;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+.fee-rate-value {
+    color: #111;
+    font-size: 32px;
+    font-weight: 800;
+}
+.results-card {
+    /* Inherit previous .results-section styles */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+.cta-section {
+    text-align: center;
+    margin-top: 32px;
+}
+.cta-button {
+    background: #3B82F6;
+    color: #fff;
+    border: none;
+    padding: 20px 56px;
+    border-radius: 32px;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(59,130,246,0.10);
+    margin-bottom: 12px;
+}
+.cta-button:hover {
+    background: #2563eb;
+}
+/* Remove window controls */
+.window-controls, .calculator-icon { display: none !important; }

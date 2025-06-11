@@ -15,25 +15,8 @@
         </div>
 
         <!-- Calculator Card -->
-        <div class="calculator-card">
-            <!-- Title Bar -->
-            <div class="title-bar">
-                <div class="window-controls">
-                    <span class="control minimize">−</span>
-                    <span class="control close">×</span>
-                    <span class="control add">+</span>
-                </div>
-                <div class="calculator-icon">
-                    <div class="icon-circle"></div>
-                </div>
-                <h1 class="calculator-title">
-                    Quidkey Fee<br>
-                    Savings Calculator
-                </h1>
-            </div>
-
-            <!-- Input Section -->
-            <div class="input-section">
+        <div class="calculator-row">
+            <div class="input-card">
                 <label for="monthly-volume" class="input-label">Total GMV</label>
                 <div class="input-group">
                     <input
@@ -45,19 +28,35 @@
                         min="0"
                         step="0.01"
                     >
-                    <span class="currency-symbol">£</span>
+                    <span class="currency-symbol">€</span>
+                </div>
+                <div class="fee-rate-row">
+                    <div class="fee-rate-box">
+                        <div class="fee-rate-label">Quidkey Fee</div>
+                        <div class="fee-rate-value" id="quidkey-rate">0.5%</div>
+                    </div>
+                    <div class="fee-rate-box">
+                        <div class="fee-rate-label">Current Bank Fee</div>
+                        <div class="fee-rate-value" id="bank-rate">2.9%</div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Results Section -->
-            <div class="results-section">
-                <div class="savings-display">
-                    <h2 class="savings-title">Estimated Annual Savings</h2>
-                    <p class="savings-subtitle">*Compared To Card Payment Fees</p>
-                    <div class="savings-amount">
-                        <span class="plus-sign">+</span>
-                        <span class="currency">£</span>
-                        <span id="annual-savings" class="amount">16,267.44</span>
+            <div class="results-card">
+                <h2 class="savings-title">Estimated Annual Savings</h2>
+                <div class="savings-amount-row">
+                    <span class="plus-sign">+</span>
+                    <span class="currency">€</span>
+                    <span id="annual-savings" class="amount">16,267.44</span>
+                    <span class="checkmark-emoji">✅</span>
+                </div>
+                <div class="fee-breakdown-row">
+                    <div class="fee-col">
+                        <div class="fee-label">Quidkey Fee</div>
+                        <div id="quidkey-fee-amount" class="fee-amount">€1500</div>
+                    </div>
+                    <div class="fee-col">
+                        <div class="fee-label">Bank Fee</div>
+                        <div id="bank-fee-amount" class="fee-amount">€8700</div>
                     </div>
                 </div>
 
@@ -89,13 +88,11 @@
                     Show Breakdown
                 </button>
             </div>
-
         </div>
 
         <!-- Call to Action -->
         <div class="cta-section">
-            <button class="cta-button">Get Started with Quidkey</button>
-            <p class="cta-text">Start saving on your payment processing fees today</p>
+            <button class="cta-button">Get Started</button>
         </div>
     </div>
 
