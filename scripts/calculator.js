@@ -59,7 +59,10 @@ class FeeCalculator {
             value = parts[0] + '.' + parts[1].substring(0, 2);
         }
 
-        input.value = value;
+        // Format with comma as thousands separator
+        let [intPart, decPart] = value.split('.');
+        intPart = intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        input.value = decPart !== undefined ? `${intPart}.${decPart}` : intPart;
     }
 
     calculateFees(monthlyVolume) {
@@ -99,7 +102,9 @@ class FeeCalculator {
     }
 
     calculateAndDisplay() {
-        const monthlyVolume = parseFloat(this.monthlyVolumeInput.value) || 0;
+        // Parse input value, removing commas
+        const rawValue = this.monthlyVolumeInput.value.replace(/,/g, '');
+        const monthlyVolume = parseFloat(rawValue) || 0;
 
         if (monthlyVolume <= 0) {
             this.displayResults({
@@ -118,21 +123,17 @@ class FeeCalculator {
     }
 
     displayResults(results) {
-        // Add updating animation
         this.annualSavingsElement.classList.add('updating');
-
         setTimeout(() => {
-            // Update main savings display
+            // Only one euro symbol in the savings row
             this.annualSavingsElement.textContent = this.formatCurrency(results.annualSavings);
-
-            // Update breakdown details
-            this.monthlyVolumeDisplay.textContent = this.formatCurrency(results.monthlyVolume);
-            this.transactionsCountElement.textContent = this.formatNumber(results.numberOfTransactions);
-            this.competitorFeesElement.textContent = this.formatCurrency(results.competitor.total);
-            this.quidkeyFeesElement.textContent = this.formatCurrency(results.quidkey.total);
-            this.monthlySavingsElement.textContent = this.formatCurrency(results.monthlySavings);
-
-            // Remove updating animation
+            this.monthlyVolumeDisplay && (this.monthlyVolumeDisplay.textContent = this.formatCurrency(results.monthlyVolume));
+            this.transactionsCountElement && (this.transactionsCountElement.textContent = this.formatNumber(results.numberOfTransactions));
+            const competitorFees = document.getElementById('bank-fee-amount');
+            const quidkeyFees = document.getElementById('quidkey-fee-amount');
+            if (competitorFees) competitorFees.textContent = '€' + this.formatCurrency(results.competitor.total);
+            if (quidkeyFees) quidkeyFees.textContent = '€' + this.formatCurrency(results.quidkey.total);
+            this.monthlySavingsElement && (this.monthlySavingsElement.textContent = '€' + this.formatCurrency(results.monthlySavings));
             this.annualSavingsElement.classList.remove('updating');
         }, 150);
     }
