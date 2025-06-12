@@ -1,0 +1,287 @@
+/* FRESH CSS - VERSION 3.0 - UPDATED SPACING */
+/* Updated styles - v2.1 - Force refresh */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+body {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding: 20px;
+  color: #333;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.main-header {
+  padding-left: 0;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.05;
+  color: #000;
+}
+
+.main-subtitle {
+  font-size: 22px;
+  font-weight: 500;
+  color: #a0a0a0;
+  margin-bottom: 0;
+}
+
+.calculator-row {
+  display: flex;
+  gap: 120px;
+  margin: 40px 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.input-card {
+  width: 500px;
+  height: 320px;
+  padding: 40px 50px;
+  gap: 50px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #FFFFFF;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.input-label {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #6C6C6C;
+  margin-bottom: 16px;
+}
+
+.input-flex-row {
+  width: 400px;
+  height: 60px;
+  border-radius: 4px;
+  border: 1px solid #E1E5E9;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.volume-input {
+  flex: 1;
+  height: 100%;
+  padding: 0 0 0 20px;
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 100%;
+  color: #000000;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: left;
+  width: calc(100% - 85px);
+}
+
+.currency-box {
+  width: 85px;
+  height: 100%;
+  background: linear-gradient(0deg, #C2C9D1, #C2C9D1), linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
+  border-left: 1px solid #E1E5E9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  flex-shrink: 0;
+}
+
+.fee-rate-row {
+  width: 400px;
+  height: 90px;
+  gap: 32px;
+  display: flex;
+  align-items: stretch;
+  margin-top: 0;
+}
+
+.fee-rate-box {
+  flex: 1;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: none;
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  max-width: 160px;
+}
+
+.fee-rate-label {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #9CA3AF;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.fee-rate-value {
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  background: #F5F5F7;
+  background-blend-mode: multiply;
+  background: #C6C6C61C;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 32px;
+  font-weight: 800;
+  color: #000000;
+  padding-left: 16px;
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+}
+
+.results-card {
+  width: 500px;
+  height: 320px;
+  padding: 25px 50px 40px 50px;
+  gap: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #FFFFFF;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.savings-title {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #6C6C6C;
+  margin-bottom: 2px;
+  text-align: left;
+}
+
+.savings-amount-row {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.plus-sign {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.currency {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.amount {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.checkmark-emoji {
+  font-size: 48px;
+  margin-left: 10px;
+  vertical-align: middle;
+  filter: brightness(1.3) saturate(1.5);
+}
+
+.fee-breakdown-row {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  text-align: left;
+}
+
+.fee-col {
+  flex: 1;
+  text-align: left;
+}
+
+.fee-label {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #9CA3AF;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.fee-amount {
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000000;
+  text-align: left;
+}
+
+.cta-section {
+  margin-top: 64px;
+  text-align: center;
+  width: 100%;
+}
+
+.cta-button {
+  font-size: 28px;
+  font-weight: 700;
+  padding: 24px 72px;
+  border-radius: 32px;
+  background: #3B82F6;
+  color: #fff;
+  margin-bottom: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hide unwanted elements */
+.window-controls, .calculator-icon, .title-bar, .savings-subtitle, .breakdown-section, .toggle-breakdown { 
+  display: none !important; 
+} 

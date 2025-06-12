@@ -1,0 +1,3 @@
+[33m4ec5512[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m left textbox nearly done
+[33m25b4b1f[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Updated index.html and main.css with new layout and calculator integration
+[33m5d9675f[m Initial commit of the Quidkey Fee Savings Calculator project, including HTML structure, CSS styles, JavaScript logic for calculations and UI interactions, and comprehensive README and integration documentation for Webflow. The project is designed to help UK merchants estimate potential savings by switching to Quidkey for online payment processing.
