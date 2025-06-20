@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 body {
-  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
   background: #f8f9fa;
+  font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
   min-height: 100vh;
   padding: 20px;
   color: #333;
@@ -42,11 +42,12 @@ body {
 .savings-title {
     font-size: 32px;
     font-weight: 800;
+    color: #FFFFFF;
     margin: 0 0 8px 0;
 }
 
 .savings-subtitle {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 400;
     color: #A0A0A0;
     margin: 0;
