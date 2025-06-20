@@ -123,17 +123,33 @@ class FeeCalculator {
     }
 
     displayResults(results) {
+        // The new breakdown elements
+        const competitorFeesEl = document.getElementById('competitor-fees');
+        const quidkeyFeesEl = document.getElementById('quidkey-fees');
+
+        // Update the UI with new results
         this.annualSavingsElement.classList.add('updating');
         setTimeout(() => {
-            // Only one euro symbol in the savings row
             this.annualSavingsElement.textContent = this.formatCurrency(results.annualSavings);
-            this.monthlyVolumeDisplay && (this.monthlyVolumeDisplay.textContent = this.formatCurrency(results.monthlyVolume));
-            this.transactionsCountElement && (this.transactionsCountElement.textContent = this.formatNumber(results.numberOfTransactions));
-            const competitorFees = document.getElementById('bank-fee-amount');
-            const quidkeyFees = document.getElementById('quidkey-fee-amount');
-            if (competitorFees) competitorFees.textContent = '€' + this.formatCurrency(results.competitor.total);
-            if (quidkeyFees) quidkeyFees.textContent = '€' + this.formatCurrency(results.quidkey.total);
-            this.monthlySavingsElement && (this.monthlySavingsElement.textContent = '€' + this.formatCurrency(results.monthlySavings));
+            
+            if (this.monthlyVolumeDisplay) {
+                this.monthlyVolumeDisplay.textContent = '€' + this.formatCurrency(results.monthlyVolume);
+            }
+            if (this.transactionsCountElement) {
+                this.transactionsCountElement.textContent = this.formatNumber(results.numberOfTransactions);
+            }
+            if (competitorFeesEl) {
+                competitorFeesEl.textContent = '€' + this.formatCurrency(results.competitor.total);
+            }
+            if (quidkeyFeesEl) {
+                quidkeyFeesEl.textContent = '€' + this.formatCurrency(results.quidkey.total);
+            }
+            
+            // This element from the old design is no longer present, but we'll leave the check in case it's used elsewhere.
+            if (this.monthlySavingsElement) {
+                this.monthlySavingsElement.textContent = '€' + this.formatCurrency(results.monthlySavings);
+            }
+            
             this.annualSavingsElement.classList.remove('updating');
         }, 150);
     }

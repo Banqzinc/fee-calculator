@@ -2,44 +2,16 @@
 
 class UIController {
     constructor() {
-        this.breakdownSection = document.getElementById('breakdown');
-        this.toggleBreakdownBtn = document.getElementById('toggle-breakdown');
         this.ctaButton = document.querySelector('.cta-button');
         this.volumeInput = document.getElementById('monthly-volume');
-
-        this.isBreakdownVisible = false;
 
         this.init();
     }
 
     init() {
-        this.setupBreakdownToggle();
         this.setupCTAButton();
         this.setupInputEnhancements();
         this.setupKeyboardNavigation();
-    }
-
-    setupBreakdownToggle() {
-        if (this.toggleBreakdownBtn) {
-            this.toggleBreakdownBtn.addEventListener('click', this.toggleBreakdown.bind(this));
-        }
-    }
-
-    toggleBreakdown() {
-        this.isBreakdownVisible = !this.isBreakdownVisible;
-
-        if (this.isBreakdownVisible) {
-            this.breakdownSection.classList.add('show');
-            this.toggleBreakdownBtn.textContent = 'Hide Breakdown';
-
-            // Analytics tracking (if needed)
-            this.trackEvent('breakdown_expanded');
-        } else {
-            this.breakdownSection.classList.remove('show');
-            this.toggleBreakdownBtn.textContent = 'Show Breakdown';
-
-            this.trackEvent('breakdown_collapsed');
-        }
     }
 
     setupCTAButton() {
@@ -102,14 +74,6 @@ class UIController {
     }
 
     handleKeyboard(event) {
-        // Toggle breakdown with 'B' key
-        if (event.key.toLowerCase() === 'b' && !event.ctrlKey && !event.metaKey) {
-            if (document.activeElement !== this.volumeInput) {
-                event.preventDefault();
-                this.toggleBreakdown();
-            }
-        }
-
         // Focus input with 'I' key
         if (event.key.toLowerCase() === 'i' && !event.ctrlKey && !event.metaKey) {
             if (document.activeElement !== this.volumeInput) {
@@ -151,13 +115,6 @@ class UIController {
                 event: eventName,
                 data: data
             }, '*');
-        }
-    }
-
-    // Public method to show/hide breakdown programmatically
-    showBreakdown(show = true) {
-        if (show !== this.isBreakdownVisible) {
-            this.toggleBreakdown();
         }
     }
 

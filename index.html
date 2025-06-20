@@ -4,88 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quidkey Fee Savings Calculator</title>
-    <link rel="stylesheet" href="styles/fresh.css?v=5.1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/fresh.css?v=6.3">
 </head>
 <body>
     <div class="calculator-container">
-        <div class="main-header">
-            <h1 class="main-title">Compare Your Fees:<br>Save with Quidkey</h1>
-            <div class="main-subtitle">Calculate how much you lose on acquiring,<br>and how much Quidkey reduces costs.</div>
-        </div>
-        <div class="calculator-row">
-            <div class="input-card">
-                <div class="input-top-section">
-                    <label for="monthly-volume" class="input-label">Total GMV</label>
-                    <div class="input-flex-row">
-                        <input
-                            type="text"
-                            id="monthly-volume"
-                            class="volume-input"
-                            placeholder="30,000.00"
-                            value="30,000.00"
-                            min="0"
-                            step="0.01"
-                        >
-                        <span class="currency-box">€</span>
-                    </div>
+        <!-- The content below is from builder.io, with IDs added for calculator functionality -->
+        <div class="overflow-hidden rounded-2xl border border-solid bg-neutral-100 border-neutral-200 w-full">
+            <div class="flex gap-5 max-md:flex-col">
+                <!-- Left: Input -->
+                <div class="w-2/5 max-md:ml-0 max-md:w-full p-8">
+                    <section class="mt-7 max-md:mt-10">
+                        <h1 class="text-5xl font-bold text-black leading-[60px] max-md:mr-2.5 max-md:text-4xl max-md:leading-[56px]">
+                            Calculate Your Savings
+                        </h1>
+                        <div class="flex flex-col pl-1.5 mt-12 w-full capitalize max-md:mt-10">
+                            <label for="monthly-volume" class="self-start text-base font-medium leading-8 text-gray-500">
+                                input your monthly turnover (GMV)
+                            </label>
+                            <div class="flex overflow-hidden gap-5 justify-between px-3 py-2 mt-1 text-xl font-semibold leading-none text-black whitespace-nowrap bg-white rounded border border-solid border-gray-300">
+                                <input id="monthly-volume" type="text" value="50,000.00" class="text-black bg-transparent border-none outline-none flex-1" />
+                                <span class="text-center text-black opacity-50">€</span>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                <div class="fee-rate-row">
-                    <div class="fee-rate-box">
-                        <div class="fee-rate-label">Quidkey Fee</div>
-                        <div class="fee-rate-value" id="quidkey-rate">0.5%</div>
-                    </div>
-                    <div class="fee-rate-box">
-                        <div class="fee-rate-label">Current Bank Fee</div>
-                        <div class="fee-rate-value" id="bank-rate">2.9%</div>
-                    </div>
+
+                <!-- Right: Breakdown -->
+                <div class="ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+                    <section class="px-8 py-14 mx-auto w-full text-base leading-8 bg-white max-md:px-5 max-md:mt-10 max-md:max-w-full h-full">
+                        <h2 class="text-xl font-medium leading-5 text-black capitalize">
+                            Calculation Breakdown <span style="font-size: 12px">(Monthly Average)</span>
+                        </h2>
+                        <div class="mt-3.5 space-y-3.5">
+                            <div class="flex gap-1 items-center pt-2">
+                                <div class="self-stretch my-auto capitalize text-gray-500">Volume</div>
+                                <div class="flex-1 shrink self-stretch my-auto h-px border border-dashed basis-0 border-gray-300 min-w-60"></div>
+                                <div id="monthly-volume-display" class="self-stretch my-auto font-medium text-black">€50,000.00</div>
+                            </div>
+                            <div class="flex gap-1 items-center pt-2">
+                                <div class="self-stretch my-auto capitalize text-gray-500">Transactions #</div>
+                                <div class="flex-1 shrink self-stretch my-auto h-px border border-dashed basis-0 border-gray-300 min-w-60"></div>
+                                <div id="transactions-count" class="self-stretch my-auto font-medium text-black">694</div>
+                            </div>
+                            <div class="flex gap-1 items-center pt-2">
+                                <div class="self-stretch my-auto capitalize text-gray-500">Competitor Fees</div>
+                                <div class="flex-1 shrink self-stretch my-auto h-px border border-dashed basis-0 border-gray-300 min-w-60"></div>
+                                <div id="competitor-fees" class="self-stretch my-auto font-medium text-black">€973.61</div>
+                            </div>
+                            <div class="flex gap-1 items-center pt-2">
+                                <div class="self-stretch my-auto capitalize text-gray-500">Quidkey Fees</div>
+                                <div class="flex-1 shrink self-stretch my-auto h-px border border-dashed basis-0 border-gray-300 min-w-60"></div>
+                                <div id="quidkey-fees" class="self-stretch my-auto font-medium text-black">€638.89</div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
-            <div class="results-card">
+        </div>
+
+        <div class="calculator-bottom-section">
+            <div class="savings-info">
                 <h2 class="savings-title">Estimated Annual Savings</h2>
-                <div class="savings-amount-row">
-                    <span class="plus-sign">+</span>
-                    <span class="currency">€</span>
-                    <span id="annual-savings" class="amount">16,267.44</span>
-                    <span class="checkmark-emoji">✅</span>
-                </div>
-                <div class="fee-breakdown-row">
-                    <div class="fee-col">
-                        <div class="fee-label">Quidkey Fee</div>
-                        <div id="quidkey-fee-amount" class="fee-amount">€1500</div>
-                    </div>
-                    <div class="fee-col">
-                        <div class="fee-label">Bank Fee</div>
-                        <div id="bank-fee-amount" class="fee-amount">€8700</div>
-                    </div>
-                </div>
-
-                <!-- Breakdown Details (Hidden by default, can be toggled) -->
-                <div class="breakdown-section" id="breakdown">
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Monthly Volume:</span>
-                        <span id="monthly-volume-display" class="breakdown-value">£30,000.00</span>
-                    </div>
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Transactions per Month:</span>
-                        <span id="transactions-count" class="breakdown-value">417</span>
-                    </div>
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Competitor Fees (Monthly):</span>
-                        <span id="competitor-fees" class="breakdown-value">£584.17</span>
-                    </div>
-                    <div class="breakdown-item">
-                        <span class="breakdown-label">Quidkey Fees (Monthly):</span>
-                        <span id="quidkey-fees" class="breakdown-value">£383.40</span>
-                    </div>
-                    <div class="breakdown-item highlight">
-                        <span class="breakdown-label">Monthly Savings:</span>
-                        <span id="monthly-savings" class="breakdown-value">£200.77</span>
-                    </div>
-                </div>
-
-                <button class="toggle-breakdown" id="toggle-breakdown">
-                    Show Breakdown
-                </button>
+                <p class="savings-subtitle">*Compared To Card Payment Fees</p>
+            </div>
+            <div class="savings-amount-container">
+                <span class="currency">€</span>
+                <span id="annual-savings" class="amount">4,267.44</span>
             </div>
         </div>
     </div>
