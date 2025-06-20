@@ -15,7 +15,7 @@ body {
 }
 
 .calculator-container {
-  max-width: 1288px;
+  max-width: 1100px;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -27,7 +27,7 @@ body {
 .calculator-bottom-section {
     background: #000000;
     color: #FFFFFF;
-    padding: 40px 60px;
+    padding: 50px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,13 +40,13 @@ body {
 }
 
 .savings-title {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
     margin: 0 0 8px 0;
 }
 
 .savings-subtitle {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
     color: #A0A0A0;
     margin: 0;
@@ -59,12 +59,12 @@ body {
 }
 
 .currency {
-    font-size: 56px;
+    font-size: 64px;
     margin-right: 4px;
 }
 
 .amount {
-    font-size: 56px;
+    font-size: 64px;
 }
 
 .cta-section {
@@ -123,4 +123,11 @@ body {
     .currency, .amount {
         font-size: 48px;
     }
+}
+
+.main-heading {
+  font-size: 48px; /* Equivalent to text-5xl */
+  font-weight: 700; /* Equivalent to font-bold */
+  line-height: 1.25; /* Adjusted for better appearance */
+  color: #000000; /* Equivalent to text-black */
 } 

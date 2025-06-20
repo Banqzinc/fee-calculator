@@ -126,6 +126,7 @@ class FeeCalculator {
         // The new breakdown elements
         const competitorFeesEl = document.getElementById('competitor-fees');
         const quidkeyFeesEl = document.getElementById('quidkey-fees');
+        const monthlySavingsEl = document.getElementById('monthly-savings');
 
         // Update the UI with new results
         this.annualSavingsElement.classList.add('updating');
@@ -144,10 +145,8 @@ class FeeCalculator {
             if (quidkeyFeesEl) {
                 quidkeyFeesEl.textContent = '€' + this.formatCurrency(results.quidkey.total);
             }
-            
-            // This element from the old design is no longer present, but we'll leave the check in case it's used elsewhere.
-            if (this.monthlySavingsElement) {
-                this.monthlySavingsElement.textContent = '€' + this.formatCurrency(results.monthlySavings);
+            if (monthlySavingsEl) {
+                monthlySavingsEl.textContent = '€' + this.formatCurrency(results.monthlySavings);
             }
             
             this.annualSavingsElement.classList.remove('updating');
