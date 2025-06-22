@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quidkey Fee Savings Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/fresh.css?v=6.9">
 </head>
 <body>
@@ -14,12 +17,12 @@
             <div class="flex gap-5 max-md:flex-col">
                 <!-- Left: Input -->
                 <div class="w-[45%] max-md:ml-0 max-md:w-full">
-                    <section class="px-6 pt-12 pb-20 h-full flex flex-col justify-between">
+                    <section class="pt-12 pb-20 h-full flex flex-col justify-between" style="padding-left: 1.5rem; padding-right: 1.5rem;">
                         <h1 class="main-heading">
                             <span style="white-space: nowrap;">Calculate Your</span><br>Savings
                         </h1>
-                        <div class="flex flex-col pl-1.5 w-full capitalize">
-                            <label for="monthly-volume" class="self-start text-base font-medium leading-8 text-[#C2C9D1]">
+                        <div class="flex flex-col w-full capitalize">
+                            <label for="monthly-volume" class="self-start text-base font-medium leading-8 text-neutral-500">
                                 input your monthly turnover (GMV)
                             </label>
                             <div class="flex h-11 items-center justify-between px-4 mt-1 text-xl font-semibold leading-none text-black whitespace-nowrap bg-white rounded border border-solid border-gray-300">
@@ -68,9 +71,9 @@
                 </div>
             </div>
             
-            <div class="calculator-bottom-section">
+            <div class="calculator-bottom-section flex items-center justify-between p-6">
                 <div class="savings-info">
-                    <h2 class="savings-title">Estimated Annual Savings</h2>
+                    <h2 class="savings-title text-3xl font-semibold leading-8 capitalize" style="font-family: 'Inter', sans-serif;">Estimated Annual Savings</h2>
                     <p class="savings-subtitle" style="color: #FFFFFF;">*Compared To Card Payment Fees</p>
                 </div>
                 <div class="savings-amount-container">
