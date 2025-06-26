@@ -247,13 +247,21 @@ body {
         height: 44px;
     }
     
-    /* Calculation Breakdown flush left, right padding for numbers */
+    /* Calculation Breakdown flush left, right padding for numbers, full-width white background */
     .w-\[55\%\], .w-full, .mx-auto, .text-base, .bg-white {
         width: 100% !important;
         margin-left: 0 !important;
         padding-left: 0 !important;
         padding-right: 16px !important;
-        overflow-x: auto !important;
+        background: #FFF !important;
+        overflow-x: unset !important;
+    }
+    /* Add left padding to inner content for alignment */
+    .bg-white h2,
+    .bg-white span,
+    .bg-white .breakdown-row,
+    .bg-white .flex.gap-1\.5.items-center.pt-2 > div:first-child {
+        padding-left: 16px !important;
     }
     /* Metric values right-aligned, with right padding */
     #monthly-volume-display,
