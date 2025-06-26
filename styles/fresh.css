@@ -189,8 +189,7 @@ body {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 18px;
-        padding-bottom: 18px;
+        padding: 0 !important;
     }
     
     .input-container {
@@ -281,13 +280,13 @@ body {
     /* Remove left padding from inner elements in top section */
     .main-heading,
     .input-container,
-    .flex.h-11.items-center {
+    .flex.h-11.items-center,
+    input[type="text"] {
         padding-left: 0 !important;
     }
     /* Add left padding only to the outer section container of the top section */
     .px-10.pt-\[44px\].pb-6.h-full.flex.flex-col.justify-between {
         padding-left: 16px !important;
-        background: #F5F5F7 !important;
     }
 }
 
