@@ -278,6 +278,17 @@ body {
         padding-right: 0 !important;
         margin-right: 0 !important;
     }
+    /* Remove left padding from inner elements in top section */
+    .main-heading,
+    .input-container,
+    .flex.h-11.items-center {
+        padding-left: 0 !important;
+    }
+    /* Add left padding only to the outer section container of the top section */
+    .px-10.pt-\[44px\].pb-6.h-full.flex.flex-col.justify-between {
+        padding-left: 16px !important;
+        background: #F5F5F7 !important;
+    }
 }
 
 @media (max-width: 480px) {
