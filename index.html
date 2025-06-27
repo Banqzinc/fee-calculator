@@ -71,15 +71,20 @@
                 </div>
             </div>
             
-            <div class="calculator-bottom-section flex items-center justify-between p-6">
-                <div class="savings-info" style="padding-left: 2px;">
-                    <h2 class="savings-title text-3xl font-semibold leading-8 capitalize" style="font-family: 'Inter', sans-serif;">Estimated Annual Savings</h2>
-                    <p class="savings-subtitle" style="color: #FFFFFF; padding-left: 4px; font-size: 12px; font-weight: 600; line-height: 24px; text-transform: capitalize;"> <span style="position: relative; top: -3px;">*</span>Compared To Card Payment Fees</p>
+            <!-- Make the bottom section left-aligned with the card, not right-aligned -->
+            <div>
+              <div class="calculator-bottom-section flex items-center justify-end px-[44px] py-[50px] bg-black rounded-b-2xl text-white w-full">
+                <div class="savings-info flex-1 text-left">
+                  <h2 class="savings-title text-3xl font-semibold leading-8">Estimated Annual Savings</h2>
+                  <p class="savings-subtitle text-sm text-gray-400 mt-1">
+                    <span style="position: relative; top: -3px;">*</span> Compared To Card Payment Fees
+                  </p>
                 </div>
-                <div class="savings-amount-container">
-                    <span class="currency">€</span>
-                    <span id="annual-savings" class="amount">4,016.67</span>
+                <div class="savings-amount-container flex items-baseline justify-end w-[269px]">
+                  <span class="currency text-[64px] mr-2">€</span>
+                  <span id="annual-savings" class="amount text-[64px] font-bold block">4,016.67</span>
                 </div>
+              </div>
             </div>
         </div>
     </div>
