@@ -17,17 +17,19 @@
             <div class="flex gap-5 max-md:flex-col">
                 <!-- Left: Input -->
                 <div class="w-[45%] max-md:ml-0 max-md:w-full">
-                    <section class="px-6 pt-[44px] pb-20 h-full flex flex-col justify-between">
+                    <section class="input-section px-6 pt-[44px] pb-20 h-full flex flex-col justify-between top-section-grey">
                         <h1 class="main-heading" style="margin-top: -8px;">
                             <span style="white-space: nowrap;">Calculate Your</span><br>Savings
                         </h1>
-                        <div class="flex flex-col w-full capitalize">
+                        <div class="flex flex-col w-full capitalize input-container">
                             <label for="monthly-volume" class="self-start text-base font-medium leading-8 text-neutral-500">
                                 input your monthly turnover (GMV)
                             </label>
-                            <div class="flex h-11 items-center justify-between px-4 mt-1 text-xl font-semibold leading-none text-black whitespace-nowrap bg-white rounded border border-solid border-gray-300">
-                                <input id="monthly-volume" type="text" value="50,000.00" class="text-black bg-transparent border-none outline-none flex-1" />
-                                <span class="text-center text-black opacity-50">€</span>
+                            <div class="input-box-align">
+                                <div class="flex h-11 items-center justify-between px-4 mt-1 text-xl font-semibold leading-none text-black whitespace-nowrap bg-white rounded border border-solid border-gray-300">
+                                    <input id="monthly-volume" type="text" value="50,000.00" class="text-black bg-transparent border-none outline-none flex-1" />
+                                    <span class="text-center text-black opacity-50">€</span>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -35,7 +37,7 @@
 
                 <!-- Right: Breakdown -->
                 <div class="w-[55%] max-md:ml-0 max-md:w-full">
-                    <section class="pt-[44px] px-[44px] pb-[52px] mx-auto w-full text-base bg-white max-md:px-5 max-md:mt-10 max-md:max-w-full h-full">
+                    <section class="breakdown-section pt-[44px] px-[44px] pb-[52px] mx-auto w-full text-base bg-white max-md:px-5 max-md:mt-10 max-md:max-w-full h-full">
                         <h2 class="text-xl font-medium leading-5 text-black capitalize">
                             Calculation Breakdown
                         </h2>

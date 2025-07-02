@@ -1,6 +1,7 @@
-/* FRESH CSS - V4.0 - Figma Redesign */
+/* FRESH CSS - V6.9 - Desktop + Mobile Responsive Design */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+/* Desktop Base Styles - Original Desktop Design */
 body {
   background: #f8f9fa;
   font-family: 'Inter', Arial, 'Segoe UI', sans-serif;
@@ -57,8 +58,6 @@ body {
     display: flex;
     align-items: baseline;
     font-weight: 700;
-    width: 55%;
-    justify-content: flex-end;
 }
 
 .currency {
@@ -68,6 +67,13 @@ body {
 
 .amount {
     font-size: 64px;
+}
+
+.main-heading {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #000000;
 }
 
 .cta-section {
@@ -91,6 +97,27 @@ body {
 
 .cta-button:hover {
   background: #2563EB;
+}
+
+/* Desktop-only base styles for mobile-specific classes */
+.top-section-grey {
+  background: transparent;
+}
+
+.input-container {
+  background: transparent;
+}
+
+.input-box-align {
+  width: 100%;
+}
+
+.input-section {
+  /* Inherits from Tailwind classes */
+}
+
+.breakdown-section {
+  /* Inherits from Tailwind classes */
 }
 
 /* Enhanced Mobile Responsive Styles */
@@ -133,9 +160,15 @@ body {
         flex-direction: column;
         align-items: flex-start !important;
         gap: 20px;
-        padding: 30px 0 30px 16px !important;
+        padding: 30px 16px 30px 16px !important;
         border-radius: 12px;
         text-align: left !important;
+        justify-content: flex-start !important;
+    }
+    
+    .savings-info {
+        position: static !important;
+        left: auto !important;
     }
     
     .savings-title {
@@ -154,13 +187,15 @@ body {
     }
     
     .savings-amount-container {
-        width: 100%;
+        width: auto !important;
         justify-content: flex-start !important;
         align-items: flex-end;
         margin-top: 10px;
         min-width: 0 !important;
         text-align: left !important;
         padding-left: 0 !important;
+        max-width: 100% !important;
+        overflow: hidden;
     }
     
     .currency, .amount {
@@ -200,7 +235,7 @@ body {
         padding: 0 !important;
     }
     
-    /* Remove background from input-container so only input box is white */
+    /* Mobile input container styling */
     .input-container {
         background: #F5F5F7 !important;
     }
@@ -222,8 +257,6 @@ body {
     
     input[type="text"] {
         font-family: 'Inter', Arial, 'Segoe UI', sans-serif !important;
-        /* font-size: 1.25rem !important; */
-        /* font-weight: 700 !important; */
         background: transparent !important;
         height: 44px !important;
         padding: 0 0 0 16px !important;
@@ -250,79 +283,110 @@ body {
         height: 44px;
     }
     
-    /* Calculation Breakdown flush left, right padding for numbers, full-width white background */
-    .w-\[55\%\], .w-full, .mx-auto, .text-base, .bg-white {
-        width: 100% !important;
-        margin-left: 0 !important;
+    /* Mobile breakdown section adjustments */
+    .breakdown-section {
+        padding-top: 36px !important;
         padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin: 0 !important;
+        border-top-left-radius: 0 !important;
+    }
+    
+    .breakdown-section h2,
+    .breakdown-section span {
+        padding-left: 16px !important;
+    }
+    
+    .breakdown-section .flex.gap-1\.5.items-center.pt-2 > div:first-child {
+        padding-left: 16px !important;
+    }
+    
+    .breakdown-section .flex.gap-1\.5.items-center.pt-2 > div:last-child {
+        text-align: right !important;
         padding-right: 16px !important;
-        background: #FFF !important;
-        overflow-x: unset !important;
     }
-    /* Add left padding to inner content for alignment */
-    .bg-white h2,
-    .bg-white span,
-    .bg-white .breakdown-row,
-    .bg-white .flex.gap-1\.5.items-center.pt-2 > div:first-child {
-        padding-left: 16px !important;
+    
+    /* Mobile input section adjustments */
+    .input-section {
+        padding: 44px 10px 6px 10px !important;
     }
-    /* Metric values right-aligned, with right padding */
-    #monthly-volume-display,
-    #transactions-count,
-    #competitor-fees,
-    #quidkey-fees,
-    #monthly-savings {
-        text-align: right !important;
-        padding-right: 0 !important;
-        margin-right: 0 !important;
-    }
-    .flex.gap-1\.5.items-center.pt-2 > div:last-child {
-        text-align: right !important;
-        padding-right: 0 !important;
-        margin-right: 0 !important;
-    }
-    /* Remove left padding from inner elements in top section */
-    .main-heading,
-    .input-container,
-    .flex.h-11.items-center,
-    input[type="text"] {
-        padding-left: 0 !important;
-    }
-    /* Add left padding only to the outer section container of the top section */
-    .px-10.pt-\[44px\].pb-6.h-full.flex.flex-col.justify-between {
-        padding-left: 16px !important;
-    }
+    
     .top-section-grey {
         background: #F5F5F7 !important;
         width: 100% !important;
     }
-    .input-container {
-        background: transparent !important;
-    }
+    
     .input-box-align {
-        width: calc(100% + 24px) !important;
-        margin-right: -24px !important;
+        width: 100% !important;
+        margin-right: 0 !important;
     }
+    
+    /* Reset mobile-specific input styling */
     .main-heading,
     .input-container,
     .flex.h-11.items-center,
     input[type="text"] {
         padding-left: 0 !important;
     }
-    .px-10.pt-\[44px\].pb-6.h-full.flex.flex-col.justify-between {
-        padding-left: 16px !important;
-    }
+    
+    /* Mobile bottom section final adjustments */
     .calculator-bottom-section {
         padding-top: 36px !important;
         padding-bottom: 40px !important;
+        justify-content: flex-start !important;
     }
+    
+    /* NUCLEAR OPTION - Override EVERY possible class combination */
+    .calculator-bottom-section,
+    .calculator-bottom-section.flex,
+    .calculator-bottom-section.flex.justify-end,
+    .calculator-bottom-section.flex.items-center.justify-end,
+    div.calculator-bottom-section.flex.justify-end,
+    div.calculator-bottom-section.flex.items-center.justify-end,
+    div[class*="calculator-bottom-section"][class*="justify-end"] {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+    
+    /* Force override the savings container with maximum specificity */
+    .savings-amount-container,
+    .savings-amount-container.flex,
+    .savings-amount-container.flex.justify-end,
+    .savings-amount-container.flex.items-baseline.justify-end,
+    div.savings-amount-container.flex.justify-end,
+    div.savings-amount-container.flex.items-baseline.justify-end,
+    div[class*="savings-amount-container"][class*="justify-end"] {
+        justify-content: flex-start !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+    }
+    
     .savings-title {
         font-size: 2.2rem !important;
         line-height: 1.1 !important;
     }
+    
     .amount {
         font-size: 3rem !important;
         line-height: 1.1 !important;
+    }
+    
+    /* FINAL NUCLEAR OPTION - Force with CSS custom properties and highest specificity */
+    * [class*="calculator-bottom-section"] {
+        justify-content: flex-start !important;
+    }
+    
+    * [class*="savings-amount-container"] {
+        justify-content: flex-start !important;
+        width: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Override ANY justify-end within mobile breakpoint */
+    * [class*="justify-end"] {
+        justify-content: flex-start !important;
     }
 }
 
@@ -415,13 +479,6 @@ body {
     .currency, .amount {
         font-size: 36px;
     }
-}
-
-.main-heading {
-  font-size: 48px; /* Equivalent to text-5xl */
-  font-weight: 700; /* Equivalent to font-bold */
-  line-height: 1.25; /* Adjusted for better appearance */
-  color: #000000; /* Equivalent to text-black */
 }
 
 /* Mobile-specific utility classes */
