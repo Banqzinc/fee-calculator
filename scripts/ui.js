@@ -12,6 +12,7 @@ class UIController {
         this.setupCTAButton();
         this.setupInputEnhancements();
         this.setupKeyboardNavigation();
+        this.setupHeightCommunication();
     }
 
     setupCTAButton() {
@@ -137,6 +138,57 @@ class UIController {
             setTimeout(() => {
                 savingsDisplay.classList.remove('highlighted');
             }, duration);
+        }
+    }
+
+    setupHeightCommunication() {
+        // Send initial height after DOM is loaded
+        if (this.isInIframe()) {
+            // Use setTimeout to ensure all styling is applied
+            setTimeout(() => {
+                this.sendHeightToParent();
+            }, 100);
+
+            // Send height on window resize
+            window.addEventListener('resize', () => {
+                setTimeout(() => {
+                    this.sendHeightToParent();
+                }, 100);
+            });
+        }
+    }
+
+    isInIframe() {
+        return window.parent && window.parent !== window;
+    }
+
+    sendHeightToParent() {
+        if (!this.isInIframe()) return;
+
+        try {
+            // Get the calculator container height
+            const calculatorContainer = document.querySelector('.calculator-container');
+            const height = calculatorContainer ?
+                calculatorContainer.offsetHeight :
+                document.body.scrollHeight;
+
+            // Add a small buffer to prevent content cutoff
+            const heightWithBuffer = height + 20;
+
+            // Send height to parent with specific origin for security
+            window.parent.postMessage({
+                type: "setHeight",
+                height: heightWithBuffer
+            }, "https://quidkey.com");
+
+            // Also send to netlify domain for testing
+            window.parent.postMessage({
+                type: "setHeight",
+                height: heightWithBuffer
+            }, "*");
+
+        } catch (error) {
+            console.warn('Could not send height to parent:', error);
         }
     }
 }

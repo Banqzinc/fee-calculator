@@ -132,7 +132,7 @@ class FeeCalculator {
         this.annualSavingsElement.classList.add('updating');
         setTimeout(() => {
             this.annualSavingsElement.textContent = this.formatCurrency(results.annualSavings);
-            
+
             if (this.monthlyVolumeDisplay) {
                 this.monthlyVolumeDisplay.textContent = '€' + this.formatCurrency(results.monthlyVolume);
             }
@@ -148,8 +148,16 @@ class FeeCalculator {
             if (monthlySavingsEl) {
                 monthlySavingsEl.textContent = '€' + this.formatCurrency(results.monthlySavings);
             }
-            
+
             this.annualSavingsElement.classList.remove('updating');
+
+            // Send height to parent when content changes (for iframe embedding)
+            if (window.uiController && window.uiController.sendHeightToParent) {
+                // Small delay to ensure DOM updates are complete
+                setTimeout(() => {
+                    window.uiController.sendHeightToParent();
+                }, 50);
+            }
         }, 150);
     }
 
